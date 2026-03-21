@@ -482,6 +482,37 @@
             gap: 1.5rem;
         }
 
+        .about-focus {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.focus-item {
+    background: var(--color-bg-tertiary);
+    padding: 1.5rem;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-base);
+}
+
+.focus-item:hover {
+    border-color: var(--color-accent-cyan);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.15);
+}
+
+.focus-item h3 {
+    color: var(--color-accent-cyan);
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .about-focus {
+        grid-template-columns: 1fr;
+    }
+}
+
         .stat-card {
             background: var(--color-bg-tertiary);
             padding: 2rem;
@@ -643,7 +674,7 @@
 
         .skill-category {
             background: var(--color-bg-tertiary);
-            padding: 2rem;
+            padding: 1.2rem;
             border-radius: var(--radius-xl);
             border: 1px solid var(--color-border);
             transition: all var(--transition-base);
@@ -662,31 +693,26 @@
         }
 
         .skill-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
+  display: flex;
+  flex-wrap: wrap;   /* THIS is the key fix */
+  gap: 6px;          /* controls spacing between skills */
+}
 
         .skill-item {
-            padding: 0.75rem 0;
-            color: var(--color-text-secondary);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            transition: all var(--transition-base);
-        }
+  padding: 4px 10px;
+  background: rgba(0, 217, 255, 0.1);
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--color-text-primary);
+}
 
-        .skill-item::before {
-            content: '▸';
-            color: var(--color-accent-cyan);
-            margin-right: 0.75rem;
-            font-size: 1.2rem;
-        }
+     
 
         .skill-item:hover {
             color: var(--color-accent-cyan);
             padding-left: 0.5rem;
         }
+        
 
         /* ============================================================================
            CONTACT SECTION
@@ -1008,6 +1034,37 @@
             opacity: 1;
             visibility: visible;
         }
+/* ============================================================================
+   PROFILE IMAGE (SQUARE STYLE)
+   ========================================================================== */
+
+.profile-image {
+    margin-bottom: 1.5rem;
+}
+
+.profile-image img {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px; /* change to 0 for sharp square */
+    object-fit: cover;
+    border: 3px solid #00D9FF;
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.profile-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(0, 217, 255, 0.6);
+}
+
+/* Mobile Alignment */
+@media (max-width: 768px) {
+    .profile-image {
+        display: flex;
+        justify-content: center;
+    }
+}
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1042,13 +1099,15 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
+                <div class="profile-image">
+                    <img src="Parth_IMG.png" alt="Parthrajsinh Dabhi">
+                </div>
                 <h1 class="hero-title">
                     <span class="gradient-text">Parthrajsinh Dabhi</span>
                 </h1>
-                <p class="hero-subtitle">Full-Stack Developer | React Specialist | Problem Solver</p>
+                <p class="hero-subtitle">Full-Stack Developer | Data, AI & Business Systems</p>
                 <p class="hero-description">
-                    Master's student in International Information Systems with hands-on experience building production-oriented features across frontend and backend systems. Passionate about crafting scalable software and shipping features rapidly in startup environments.
-                </p>
+                    Master’s student in International Information Systems with hands-on experience building full-stack applications and data-driven workflows. Experienced in developing scalable systems while considering business requirements, with a focus on data, AI-assisted solutions, and practical problem solving.            </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -1064,8 +1123,8 @@
                     <pre class="code-block"><code>const developer = {
   name: "Parthrajsinh",
   location: "Nuremberg, DE",
-  skills: ["React", "TypeScript", "APIs"],
-  passion: "Building scalable products"
+  skills: ["React", "Node","Python", "TypeScript", "APIs", "SQL, "MongoDB""],
+  mindset: "Building scalable systems with business impact".
 }</code></pre>
                 </div>
             </div>
@@ -1083,33 +1142,33 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a passionate full-stack developer with a strong foundation in modern web technologies. Currently pursuing a Master's degree in International Information Systems at Friedrich-Alexander-Universität Erlangen-Nürnberg, I combine academic rigor with practical industry experience.
-                    </p>
+                        I’m a Master’s student in International Information Systems at Friedrich-Alexander-Universität Erlangen-Nürnberg, with hands-on experience building full-stack applications and data-driven workflows.  </p>
                     <p>
-                        My professional journey includes roles at innovative companies where I've developed reusable React components, built secure REST APIs, and contributed to production systems that serve real users. I thrive in collaborative environments where I can contribute to code quality, mentor teammates, and ship features that matter.
-                    </p>
+                       I have worked on production-oriented systems involving REST APIs, dashboards, and real-time features, focusing on writing clean, scalable code and contributing effectively in collaborative development environments.   </p>
                     <p>
-                        Beyond coding, I'm interested in AI-assisted workflows, data science concepts, and the intersection of technology and problem-solving. I'm available for full-time opportunities starting March 23rd, 2026.
-                    </p>
+                        I’m particularly interested in developing systems that combine software, data, and business impact, with a growing focus on AI-assisted solutions and automation. I’m currently seeking full-time opportunities starting March 2026. </p>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <h3 class="stat-number">3+</h3>
-                        <p class="stat-label">Years of Experience</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3 class="stat-number">5+</h3>
-                        <p class="stat-label">Projects Shipped</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3 class="stat-number">8+</h3>
-                        <p class="stat-label">Tech Skills</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3 class="stat-number">4</h3>
-                        <p class="stat-label">Languages</p>
-                    </div>
-                </div>
+                <div class="about-focus">
+    <div class="focus-item">
+        <h3>💻 Software Development</h3>
+        <p>Building scalable web applications with modern frontend and backend technologies.</p>
+    </div>
+
+    <div class="focus-item">
+        <h3>📊 Data & Analytics</h3>
+        <p>Working with data, APIs, and structured systems to derive insights and improve decisions.</p>
+    </div>
+
+    <div class="focus-item">
+        <h3>🤖 AI & Automation</h3>
+        <p>Exploring AI-driven workflows and automation to enhance productivity and systems.</p>
+    </div>
+
+    <div class="focus-item">
+        <h3>🔐 Systems & Security</h3>
+        <p>Understanding system design, reliability, and basic security practices in applications.</p>
+    </div>
+</div>
             </div>
         </div>
     </section>
@@ -1123,14 +1182,14 @@
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">Bakery Management System</h3>
-                        <a href="https://github.com/Parthrajsinh-Dabhi" class="project-link" title="View on GitHub">
+                        <a href="https://github.com/Parthrajsinh-Dabhi/Bakery_Main" class="project-link" title="View on GitHub">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M7 17L17 7M7 7h10v10"></path>
                             </svg>
                         </a>
                     </div>
                     <p class="project-description">
-                        Comprehensive product, order, and admin workflows with backend APIs and interactive dashboards for operational management. Built with React frontend and Node.js backend.
+                        Built a full-stack system to manage products, orders, and administrative workflows for a bakery business. Designed and implemented REST APIs and interactive dashboards to streamline operations and improve order tracking across modules.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">React</span>
@@ -1143,16 +1202,15 @@
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">Property Search Platform</h3>
-                        <a href="https://github.com/Parthrajsinh-Dabhi" class="project-link" title="View on GitHub">
+                        <h3 class="project-title">Property Search Platform (Shreeji_Main)</h3>
+                        <a href="https://github.com/Parthrajsinh-Dabhi/Shreeji_Main" class="project-link" title="View on GitHub">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M7 17L17 7M7 7h10v10"></path>
                             </svg>
                         </a>
                     </div>
                     <p class="project-description">
-                        Property search, quotation flows, and enquiry handling system. Focused on user experience and seamless API integration for real-time data updates.
-                    </p>
+                        Developed a real estate platform enabling property search, quotation generation, and enquiry management. Focused on building a smooth user experience with efficient API integration for handling dynamic property data. </p>
                     <div class="project-tech">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">TypeScript</span>
@@ -1160,20 +1218,18 @@
                         <span class="tech-tag">API Integration</span>
                     </div>
                 </div>
-
-                <!-- Project 3 -->
+                    <!-- Project 5 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">Messaging & Order Coordination</h3>
-                        <a href="https://github.com/Parthrajsinh-Dabhi" class="project-link" title="View on GitHub">
+                        <h3 class="project-title">Messaging & Order Coordination (Buyer_Talk_Main )</h3>
+                        <a href="https://github.com/Parthrajsinh-Dabhi/Buyer_Talk_Main" class="project-link" title="View on GitHub">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M7 17L17 7M7 7h10v10"></path>
                             </svg>
                         </a>
                     </div>
                     <p class="project-description">
-                        Real-time messaging and order coordination features supporting operational workflows. Implemented secure communication channels and order tracking systems.
-                    </p>
+                        Implemented real-time messaging and order coordination features to support buyer-seller communication. Built event-driven workflows using WebSockets to ensure instant updates and reliable order tracking.</p>
                     <div class="project-tech">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">WebSockets</span>
@@ -1181,20 +1237,35 @@
                         <span class="tech-tag">Real-time Updates</span>
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
+
+    
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
             <h2 class="section-title">Skills & Expertise</h2>
             <div class="skills-grid">
+                 <div class="skill-category">
+                    <h3 class="skill-category-title">Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">TypeScript</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">SQL</span>
+                    </div>
+                </div>
                 <div class="skill-category">
                     <h3 class="skill-category-title">Frontend Development</h3>
                     <div class="skill-list">
                         <span class="skill-item">React</span>
-                        <span class="skill-item">TypeScript</span>
+                        <span class="skill-item">Angular</span>
+                        <span class="skill-item">HTML</span>
+                        <span class="skill-item">CSS</span>
                         <span class="skill-item">Responsive UI</span>
                         <span class="skill-item">Component Design</span>
                     </div>
@@ -1208,22 +1279,14 @@
                         <span class="skill-item">MongoDB</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Languages</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">SQL</span>
-                    </div>
-                </div>
+               
                 <div class="skill-category">
                     <h3 class="skill-category-title">Tools & Practices</h3>
                     <div class="skill-list">
                         <span class="skill-item">Git</span>
                         <span class="skill-item">CI/CD</span>
                         <span class="skill-item">Agile/Scrum</span>
-                        <span class="skill-item">Testing</span>
+                        <span class="skill-item">Manual Testing</span>
                     </div>
                 </div>
             </div>
